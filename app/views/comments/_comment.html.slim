@@ -8,6 +8,7 @@
           li = link_to 'Reply', new_comment_path(comment: comment), remote: true
           li class="like_comment_#{comment.id}" = render partial: 'comments/like', locals: { comment: comment }
           li class="total_like_comment_#{ comment.id }" = render partial: 'comments/total_like', locals: { comment: comment }
+          li = format_date_month_year(comment.created_at, '%b %d, %Y')
         ul class="reply_#{comment.id}_form"
     - if comment.replies.present?
       - comment.replies.each do |reply|
