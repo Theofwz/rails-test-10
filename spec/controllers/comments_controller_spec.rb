@@ -22,14 +22,13 @@ RSpec.describe CommentsController, type: :controller do
 
   describe '#create' do
     def do_request
-      xhr :post, 'create', id: comment.id, reply: reply.attributes
+      xhr :post, 'create', comment: comment.attributes
     end
 
-    let(:reply)     { build(:reply) }
-    let(:comment)   { create(:comment, user: user) }
+    let(:comment)    { build(:comment)  }
 
-    it 'save a item' do
-      expect{ do_request }.to change(Reply, :count).by(1)
+    it 'save a comment' do
+      expect{ do_request }.to change(Comment, :count).by(1)
     end
   end
 end
