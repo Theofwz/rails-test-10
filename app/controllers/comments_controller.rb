@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.save
+    success = @comment.save
   end
 
   private

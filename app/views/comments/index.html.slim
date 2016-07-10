@@ -1,4 +1,5 @@
 #comments-index-container
-  - @comment_parent.each do |comment_parent|
-    .list
-      = render partial: 'comments/comment', locals: { comment: comment_parent }
+  .container
+    - @comment_parent.each do |comment_parent|
+      .list
+        = render partial: 'comments/comment', locals: { comment: comment_parent }

@@ -13,6 +13,8 @@ gem 'slim'
 gem 'devise'
 gem 'seedbank'
 gem 'simple_form'
+gem 'bootstrap-sass'
+gem 'bootstrap_flash_messages'
 
 group :development, :test do
   gem 'pry-rails'

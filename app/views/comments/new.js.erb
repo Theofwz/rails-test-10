@@ -1,2 +1,2 @@
 <%- comment_id = params[:comment] %>
-$('ul.reply-<%= comment_id %>-form').append("<%= j render(:partial => 'comments/form', locals: { comment_id: comment_id }) %>");
+$('ul.reply_<%= comment_id %>_form').append("<%= j render(:partial => 'comments/form', locals: { comment_id: comment_id }) %>");

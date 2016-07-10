@@ -1,5 +1,5 @@
 .comments-form-container
-  = simple_form_for Comment.new do |f|
+  = simple_form_for Comment.new, remote: true do |f|
     = f.hidden_field :parent_id, value: comment_id
     = f.input :content
     = f.submit 'Submit'

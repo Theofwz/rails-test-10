@@ -1,0 +1,10 @@
+<% if @comment.errors.any? %>
+  BootstrapDialog.show({
+    title: "Message",
+    message: "Your action fail",
+    type: BootstrapDialog.TYPE_DEFAULT
+  });
+<% else %>
+  $('li.reply_<%= @comment.parent.id %>_list').append('<%= j render partial: "comments/comment", locals: { comment: @comment } %>')
+  $('ul.reply_<%= @comment.parent.id %>_form').html('');
+<% end %>

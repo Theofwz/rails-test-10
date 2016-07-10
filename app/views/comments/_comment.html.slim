@@ -4,8 +4,10 @@
       = comment.content
       .actions
         = link_to 'Reply', new_comment_path(comment: comment), remote: true
-        ul class="reply-#{comment.id}-form" rel= comment.id
-
-    li
+        ul class="reply_#{comment.id}_form"
+    - if comment.replies.present?
       - comment.replies.each do |reply|
-        = render partial: 'comments/comment', locals: { comment: reply }
+        li class="reply-#{comment.id}-list"
+          = render partial: 'comments/comment', locals: { comment: reply }
+    - else
+      li class="reply_#{comment.id}_list"
