@@ -1,0 +1,13 @@
+.comments-comment-container
+  ul
+    li
+      = comment.content
+      = simple_form_for Comment.new do |f|
+        = f.hidden_field :parent_id, value: comment.id
+        = f.input :content
+        = f.submit 'Submit'
+      .actions
+        = link_to 'Reply', '#'
+    li
+      - comment.replies.each do |reply|
+        = render partial: 'comments/comment', locals: { comment: reply }
