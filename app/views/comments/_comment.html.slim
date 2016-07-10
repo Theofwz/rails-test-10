@@ -1,7 +1,8 @@
 .comments-comment-container
   ul
     li
-      = comment.content
+      p = comment.user.name
+      p = comment.content
       .actions
         = link_to 'Reply', new_comment_path(comment: comment), remote: true
         ul class="reply_#{comment.id}_form"

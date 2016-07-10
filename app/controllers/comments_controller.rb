@@ -11,6 +11,8 @@ class CommentsController < ApplicationController
   private
 
     def comment_params
-      params.require(:comment).permit(:content, :parent_id)
+      data = params.require(:comment).permit(:content, :parent_id)
+      data[:user] = current_user
+      data
     end
 end

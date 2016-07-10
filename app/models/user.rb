@@ -5,4 +5,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :comments
+  
+  def name
+    if last_name.blank?
+      first_name
+    else
+      first_name + " " + last_name
+    end
+  end
 end
