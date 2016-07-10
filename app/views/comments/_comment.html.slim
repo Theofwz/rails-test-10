@@ -2,12 +2,10 @@
   ul
     li
       = comment.content
-      = simple_form_for Comment.new do |f|
-        = f.hidden_field :parent_id, value: comment.id
-        = f.input :content
-        = f.submit 'Submit'
       .actions
-        = link_to 'Reply', '#'
+        = link_to 'Reply', new_comment_path(comment: comment), remote: true
+        ul class="reply-#{comment.id}-form" rel= comment.id
+
     li
       - comment.replies.each do |reply|
         = render partial: 'comments/comment', locals: { comment: reply }
