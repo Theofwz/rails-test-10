@@ -8,6 +8,11 @@ class CommentsController < ApplicationController
     success = @comment.save
   end
 
+  def update
+    @comment = Comment.new(comment_params)
+    success = @comment.update
+  end
+
   private
 
     def comment_params

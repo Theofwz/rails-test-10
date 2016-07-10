@@ -1,0 +1,2 @@
+$("li.like_comment_<%= @comment.id %>").html("<%= j render partial: 'comments/like', locals: {comment: @comment } %>");
+$("li.total_like_comment_<%= @comment.id %>").html("<%= j render partial: 'comments/total_like', locals: { comment: @comment } %>")

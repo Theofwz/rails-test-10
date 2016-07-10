@@ -5,6 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :comments
+  has_many :likes
+
+  def likes?(comment)
+    comment.likes.where(user_id: id).any?
+  end
   
   def name
     if last_name.blank?

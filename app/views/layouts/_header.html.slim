@@ -1,0 +1,6 @@
+.layouts-header-container
+  .container
+    ul.list-inline
+      li = current_user.name
+      li = link_to 'Login', new_user_session_path
+      li = link_to 'Sign out', destroy_user_session_path

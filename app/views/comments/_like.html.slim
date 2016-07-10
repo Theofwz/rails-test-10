@@ -1,0 +1,5 @@
+.comments-likes-like-container
+  - if user_signed_in? && current_user.likes?(comment)
+    = link_to 'Unlike', comment_like_path(comment), method: :delete, remote: true
+  - else
+    = link_to 'Like', comment_like_path(comment), method: :post, remote: true
