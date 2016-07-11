@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :comment do
     sequence(:content)    { |n| "content #{n}" }
-    user
+    association :user, factory: :user
   end
 end
